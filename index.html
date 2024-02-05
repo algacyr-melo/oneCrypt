@@ -5,34 +5,38 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Decryptor</title>
 
+	<link rel="stylesheet" href="reset.css">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-	<main class="main-interface">
-		<header class="logo-container">
+	<main class="container">
+		<header class="container__logo-wrapper">
 			<img src="alura-logo.svg" alt="Logo da ALura">
 		</header>
 
-		<form action="" class="form">
-			<label for="textInput">Digite seu texto</label>
-			<textarea
-				class="form__input"
-				name="textInput"
-				id="textInput"
-				cols="30"
-				rows="10"
-			></textarea>
+		<form class="container__form">
+				<label for="textInput">Digite seu texto:</label>
+				<textarea
+					class="form__input"
+					name="textInput"
+					id="textInput"
+					cols="30"
+					rows="10"
+				></textarea>
 		</form>
 
-		<p>
-			<img
-				src="validation-alert.svg"
-				alt="Sinal de exclamação"
-			>Apenas letras minúsculas e sem acento
-		</p>
+		<div class="container__hint">
+			<p class="container__hint">
+				<img
+					src="exclamation-circle.svg"
+					alt="Sinal de exclamação"
+				>
+				Apenas letras minúsculas e sem acento
+			</p>
+		</div>
 
-		<div class="buttons">
+		<div class="container__buttons">
 			<button type="button">Criptografar</button>
 			<button type="button">Descriptografar</button>
 		</div>

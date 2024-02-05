@@ -1,0 +1,15 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+textarea,
+button {
+	width: 100%;
+}
+
+textarea {
+	display: block;
+	overflow: auto;
+}

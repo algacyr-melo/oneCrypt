@@ -1,8 +1,13 @@
 const encryptBtn = document.getElementById('encrypt-btn');
 const decryptBtn = document.getElementById('decrypt-btn');
 
-encryptBtn.addEventListener('click', handleEncrypt);
-decryptBtn.addEventListener('click', handleDecrypt);
+encryptBtn.addEventListener('click', () => {
+	handleCipherButtonClick('encrypt');
+});
+
+decryptBtn.addEventListener('click', () => {
+	handleCipherButtonClick('decrypt');
+});
 
 const cipher = {
 	'e': 'enter',
@@ -12,33 +17,48 @@ const cipher = {
 	'u': 'ufat'
 }
 
-const textInput = document.getElementById('text-input');
+const textInputEl = document.getElementById('text-input');
 
-const textOutput = document.getElementById('text-output');
-const outputOverlay = document.getElementById('output-overlay');
+function handleCipherButtonClick(operation) {
+	if (!textInputEl.value) {
+		return ;
+	}
 
-function handleEncrypt() {
-	const text = textInput.value;
+	if (!hasOnlyLowerCase(textInputEl.value)) {
+		alert('Digite apenas letras minúsculas e sem acento');
+		return ;
+	}
 
+	let textOutput;
+	if (operation === 'encrypt') {
+		textOutput = encrypt(textInputEl.value);
+	} else if (operation === 'decrypt') {
+		textOutput = decrypt(textInputEl.value);
+	}
+
+	removeOutputOverlay();
+	updateTextOutput(textOutput);
+	clearTextInput();
+}
+
+function encrypt(text) {
 	let encryptedText = '';
+
 	for (let i = 0; i < text.length; ++i) {
 		const c = text[i];
 		encryptedText += cipher[c] || text[i];
 	}
-	textOutput.innerText = encryptedText;
-	textInput.value = '';
-	outputOverlay.style.display = 'none';
+	return encryptedText;
 }
 
-function handleDecrypt() {
-	const text = textInput.value;
+function decrypt(text) {
+	let decryptedText = '';
 
-	let originalText = '';
 	let i = 0;
 	while (i < text.length)
 	{
 		const char = text[i];
-		originalText += char;
+		decryptedText += char;
 
 		// is it a ciphered character? (a,e,i,o,u)
 		if (cipher[char]) {
@@ -54,7 +74,35 @@ function handleDecrypt() {
 		}
 		i++;
 	}
-	textOutput.innerText = originalText;
-	textInput.value = '';
-	outputOverlay.style.display = 'none';
+
+	return decryptedText;
+}
+
+function removeOutputOverlay() {
+	const outputOverlayEl = document.getElementById('output-overlay');
+
+	outputOverlayEl.style.display = 'none';
+}
+
+function updateTextOutput(textOutput) {
+	const textOutputEl = document.getElementById('text-output');
+
+	textOutputEl.innerText = textOutput;
+}
+
+function clearTextInput() {
+	textInputEl.value = '';
+}
+
+function hasOnlyLowerCase(textInput) {
+	for (let i = 0; i < textInput.length; ++i) {
+		if ((textInput.charCodeAt(i) < 97 ||
+			textInput.charCodeAt(i) > 122) &&
+			textInput[i] != ' '
+		)
+		{
+			return false;
+		}
+	}
+	return true;
 }

@@ -5,22 +5,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>OneCrypt</title>
 
-	<link rel="stylesheet" href="reset.css">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="styles/reset.css">
+	<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 
 	<div class="input-container">
 		<header class="container__logo-wrapper">
-			<img src="alura-logo.svg" alt="Logo da ALura">
+			<img src="images/alura-logo.svg" alt="Logo da ALura">
 		</header>
 
 		<form class="container__form">
-			<label for="textInput">Digite seu texto:</label>
+			<label for="text-input">Digite seu texto:</label>
 			<textarea
 				class="form__input"
-				name="textInput"
-				id="textInput"
+				name="text-input"
+				id="text-input"
 				cols="30"
 				rows="10"
 			></textarea>
@@ -29,7 +29,7 @@
 		<div class="container__hint">
 			<p class="container__hint">
 				<img
-					src="exclamation-circle.svg"
+					src="images/exclamation-circle.svg"
 					alt="Sinal de exclamação"
 				>
 				Apenas letras minúsculas e sem acento
@@ -37,8 +37,8 @@
 		</div>
 
 		<div class="container__buttons">
-			<button type="button">Criptografar</button>
-			<button type="button">Descriptografar</button>
+			<button type="button" id="encrypt-btn">Criptografar</button>
+			<button type="button" id="decrypt-btn">Descriptografar</button>
 		</div>
 
 		<footer>
@@ -48,17 +48,21 @@
 	</div>
 
 	<aside class="output-container">
-		<div class="output-container__image-wrapper">
-			<img
-				src="output-bg.svg"
-				alt="Pessoa observando diamante com uma lupa"
-			>
+		<p id="text-output"></p>
+		<div id="output-overlay">
+			<div class="output-container__image-wrapper">
+				<img
+					src="images/output-bg.svg"
+					alt="Pessoa observando diamante com uma lupa"
+				>
+			</div>
+			<h1>Nenhuma mensagem encontrada</h1>
+			<p>
+				Digite um texto que você deseja criptografar ou descriptografar.
+			</p>
 		</div>
-		<h1>Nenhuma mensagem encontrada</h1>
-		<p>
-			Digite um texto que você deseja criptografar ou descriptografar.
-		</p>
 	</aside>
-	
+
+	<script src="main.js"></script>
 </body>
 </html>

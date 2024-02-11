@@ -1,3 +1,20 @@
 body {
+	background-color: #E5E5E5;
+	height: 100vh;
+}
+
+textarea {
+	display: block;
+}
+
+.main-content {
 	display: flex;
+}
+
+.main-content__input-area {
+	flex: 2;
+}
+
+.main-content__output-area {
+	flex: 1;
 }

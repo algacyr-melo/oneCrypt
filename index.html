@@ -9,60 +9,60 @@
 	<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-
-	<div class="input-container">
-		<header class="container__logo-wrapper">
-			<img src="images/alura-logo.svg" alt="Logo da ALura">
+	<main class="main-content">
+		<header class="main-content__logo-wrapper">
+			<img src="images/alura-logo.svg" alt="Logo da Alura">
 		</header>
+		<div class="main-content__input-area">
+			<form class="form">
+				<label for="text-input">Digite seu texto:</label>
+				<textarea
+					class="form__input"
+					name="text-input"
+					id="text-input"
+					cols="30"
+					rows="10"
+					minlength="1"
+				></textarea>
+			</form>
 
-		<form class="container__form">
-			<label for="text-input">Digite seu texto:</label>
-			<textarea
-				class="form__input"
-				name="text-input"
-				id="text-input"
-				cols="30"
-				rows="10"
-				minlength="1"
-			></textarea>
-		</form>
-
-		<div class="container__hint">
-			<p class="container__hint">
+			<div class="input-hint">
 				<img
 					src="images/exclamation-circle.svg"
 					alt="Sinal de exclamação"
 				>
-				Apenas letras minúsculas e sem acento
-			</p>
-		</div>
-
-		<div class="container__buttons">
-			<button type="button" id="encrypt-btn">Criptografar</button>
-			<button type="button" id="decrypt-btn">Descriptografar</button>
-		</div>
-
-		<footer>
-			<p>Design by Alura</p>
-			<p>&copy; 2024 oneCrypt | Developed by Algacyr Melo</p>
-		</footer>
-	</div>
-
-	<aside class="output-container">
-		<p id="text-output"></p>
-		<div id="output-overlay">
-			<div class="output-container__image-wrapper">
-				<img
-					src="images/output-bg.svg"
-					alt="Pessoa observando diamante com uma lupa"
-				>
+				<p class="input-hint__text">
+					Apenas letras minúsculas e sem acento
+				</p>
 			</div>
-			<h1>Nenhuma mensagem encontrada</h1>
-			<p>
-				Digite um texto que você deseja criptografar ou descriptografar.
-			</p>
+
+			<div class="buttons">
+				<button type="button" id="encrypt-btn">Criptografar</button>
+				<button type="button" id="decrypt-btn">Descriptografar</button>
+			</div>
 		</div>
-	</aside>
+
+		<aside class="main-content__output-area">
+			<p id="text-output"></p>
+			<div id="output-overlay">
+				<div class="output-area__image-wrapper">
+					<img
+						src="images/output-bg.svg"
+						alt="Pessoa observando diamante com uma lupa"
+					>
+				</div>
+				<h1>Nenhuma mensagem encontrada</h1>
+				<p>
+					Digite um texto que você deseja criptografar ou descriptografar.
+				</p>
+			</div>
+		</aside>
+	</main>
+
+	<footer>
+		<p>Design by Alura</p>
+		<p>&copy; 2024 oneCrypt | Developed by Algacyr Melo</p>
+	</footer>
 
 	<script src="main.js"></script>
 </body>

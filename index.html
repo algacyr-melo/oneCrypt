@@ -9,60 +9,66 @@
 	<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-	<main class="main-content">
-		<header class="main-content__logo-wrapper">
-			<img src="images/alura-logo.svg" alt="Logo da Alura">
-		</header>
-		<div class="main-content__input-area">
-			<form class="form">
-				<label for="text-input">Digite seu texto:</label>
-				<textarea
-					class="form__input"
-					name="text-input"
-					id="text-input"
-					cols="30"
-					rows="10"
-					minlength="1"
-				></textarea>
-			</form>
+	<div class="page-wrapper">
 
-			<div class="input-hint">
-				<img
-					src="images/exclamation-circle.svg"
-					alt="Sinal de exclamação"
-				>
-				<p class="input-hint__text">
-					Apenas letras minúsculas e sem acento
-				</p>
-			</div>
+		<main class="main-content">
+			<div class="input-container">
+				<header class="input-container__logo-wrapper">
+					<img src="images/alura-logo.svg" alt="Logo da Alura">
+				</header>
 
-			<div class="buttons">
-				<button type="button" id="encrypt-btn">Criptografar</button>
-				<button type="button" id="decrypt-btn">Descriptografar</button>
-			</div>
-		</div>
+				<div class="main-ui__wrapper">
+					<div class="main-ui">
+						<form class="main-ui__form">
+							<label for="text-input">Digite seu texto:</label>
+							<textarea
+								name="text-input"
+								id="text-input"
+								minlength="1"
+							></textarea>
+						</form>
 
-		<aside class="main-content__output-area">
-			<p id="text-output"></p>
-			<div id="output-overlay">
-				<div class="output-area__image-wrapper">
-					<img
-						src="images/output-bg.svg"
-						alt="Pessoa observando diamante com uma lupa"
-					>
+						<div class="main-ui__hint">
+							<img
+								src="images/exclamation-circle.svg"
+								alt="Sinal de exclamação"
+							>
+							<p>
+								Apenas letras minúsculas e sem acento
+							</p>
+						</div>
+
+						<div class="main-ui__buttons">
+							<button type="button" id="encrypt-btn">Criptografar</button>
+							<button type="button" id="decrypt-btn">Descriptografar</button>
+						</div>
+					</div> <!-- main-ui -->
+				</div> <!-- main-ui__wrapper -->
+
+			</div> <!-- input-container -->
+
+			<aside class="output-container">
+				<p id="text-output"></p>
+				<div class="output-container__overlay" id="output-overlay">
+					<div class="overlay__image-wrapper">
+						<img
+							src="images/output-bg.svg"
+							alt="Pessoa observando diamante com uma lupa"
+						>
+					</div>
+					<h1>Nenhuma mensagem encontrada</h1>
+					<p>
+						Digite um texto que você deseja criptografar ou descriptografar.
+					</p>
 				</div>
-				<h1>Nenhuma mensagem encontrada</h1>
-				<p>
-					Digite um texto que você deseja criptografar ou descriptografar.
-				</p>
-			</div>
-		</aside>
-	</main>
+			</aside>
+		</main>
 
-	<footer>
-		<p>Design by Alura</p>
-		<p>&copy; 2024 oneCrypt | Developed by Algacyr Melo</p>
-	</footer>
+		<footer class="footer">
+			<p>Design by Alura</p>
+			<p>&copy; 2024 oneCrypt | Developed by Algacyr Melo</p>
+		</footer>
+	</div>
 
 	<script src="main.js"></script>
 </body>

@@ -87,7 +87,7 @@ function removeOutputOverlay() {
 function updateTextOutput(textOutput) {
 	const textOutputEl = document.getElementById('text-output');
 
-	textOutputEl.innerText = textOutput;
+	textOutputEl.textContent = textOutput;
 }
 
 function clearTextInput() {

@@ -7,69 +7,46 @@ body {
 }
 
 .page-wrapper {
-	flex: 1;
+	flex: 0 1 100%;
 
 	display: flex;
 	flex-direction: column;
-
-	padding: 1.8rem;
-	height: 100%;
 }
 
 .main-content {
+	flex: 0 1 100%;
+
 	display: flex;
 	justify-content: space-between;
 
-	flex: 1;
-}
-
-@media (max-width: 900px) {
-	.main-content {
-		flex-direction: column;
-	}
-
+	padding: 1.2rem;
 }
 
 .input-container {
+	flex: 0 0 60%;
+
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-
-	flex-basis: 60%;
-}
-
-.input-container__logo-wrapper {
-	padding: 1.2rem 0;
 }
 
 .main-ui__wrapper {
-	display: flex;
+	flex: 1 1 100%;
 
-	flex: 1;
+	display: flex;
 }
 
 .main-ui {
+	flex: 0 1 100%;
+
 	display: flex;
 	flex-direction: column;
-
-	flex: 1;
-}
-
-@media (min-width: 900px) {
-	.main-ui__wrapper {
-		justify-content: flex-end;
-	}
-
-	.main-ui {
-		flex: 0 1 80%;
-	}
 }
 
 .main-ui__form {
+	flex: 1 1 100%;
+
 	display: flex;
 	flex-direction: column;
-
-	flex: 1;
 }
 
 .main-ui__form label {
@@ -77,49 +54,39 @@ body {
 }
 
 .main-ui__form textarea {
-	flex: 1;
-}
-
-.main-ui__hint {
-	display: flex;
-}
-
-.main-ui__buttons {
-	display: flex;
-	justify-content: space-between;
-}
-
-.main-ui__buttons button {
-	flex: 0 1 45%;
-
-	padding: 1rem 0;
+	flex: 1 1 100%;
 }
 
 .output-container {
 	flex: 0 1 30%;
 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
 	background-color: #FFF;
-	padding: 1.2rem;
-
-	display: flex;
-	flex-direction: column;
-}
-
-.output-container__content-wrapper {
-	display: flex;
-	flex-direction: column;
-
-	flex: 0 1 80vh;
+	
+	position: relative;
 	overflow: auto;
 }
 
 .output-container__output {
+	position: absolute;
+	top: 0;
+	left: 0;
+
 	word-break: break-all;
 }
 
 .output-container__overlay {
+	flex: 0 1 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
 	text-align: center;
-	margin: auto;
 }
 
 .overlay__image-wrapper img {
@@ -129,13 +96,26 @@ body {
 
 footer {
 	display: flex;
-	justify-content: center;
-
-	margin-top: 2rem;
+	flex-direction: column;
+	align-items: center;
 }
 
 @media (max-width: 900px) {
-	.overlay__image-wrapper img {
+	.main-content {
+		flex-direction: column;
+	}
+
+	.overlay__image-wrapper {
 		display: none;
+	}
+}
+
+@media (min-width: 900px) {
+	.main-ui__wrapper {
+		justify-content: flex-end;
+	}
+
+	.main-ui {
+		flex: 0 1 80%;
 	}
 }

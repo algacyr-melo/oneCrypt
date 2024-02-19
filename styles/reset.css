@@ -4,16 +4,15 @@
 	padding: 0;
 }
 
+textarea,
+button {
+	border: none;
+
+	font-family: inherit;
+	font-size: 100%;
+}
+
 textarea {
 	resize: none;
 	overflow: auto;
-	border: none;
-}
-
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-  font-size: 100%;
 }

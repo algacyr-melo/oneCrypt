@@ -4,6 +4,15 @@ body {
 
 	display: flex;
 	flex-direction: column;
+
+	font-family: 'Inter', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+h1 {
+	font-weight: 700;
 }
 
 .page-wrapper {
@@ -27,6 +36,10 @@ body {
 
 	display: flex;
 	flex-direction: column;
+}
+
+.input-container__logo-wrapper {
+	padding: 1rem 0;
 }
 
 .main-ui__wrapper {
@@ -55,6 +68,51 @@ body {
 
 .main-ui__form textarea {
 	flex: 1 1 100%;
+
+	background-color: #E5E5E5;
+	border: 1px solid #0A3871;
+	border-radius: 0.2rem;
+
+	margin-bottom: 0.2rem;
+}
+
+.main-ui__form textarea:focus {
+	outline: 1px solid #0A3871;
+}
+
+.main-ui__hint {
+	display: flex;
+	gap: 0.2rem;
+
+	font-size: 0.8rem;
+}
+
+.main-ui__buttons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.main-ui__buttons button {
+	flex: 0 1 45%;
+
+	padding: 1rem 0;
+	margin-top: 1.2rem;
+	border-radius: 1rem;
+}
+
+.main-ui__buttons button:hover {
+	cursor: pointer;
+}
+
+.main-ui__buttons button:first-child {
+	background-color: #0A3871;
+	color: #FFF;
+}
+
+.main-ui__buttons button:last-child {
+	background-color: #D8DFE8;
+	color: #0A3871;
+	border: 1px solid #0A3871;
 }
 
 .output-container {
@@ -62,20 +120,17 @@ body {
 
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 
 	background-color: #FFF;
+	border-radius: 1rem;
+	padding: 0.8rem;
 	
-	position: relative;
 	overflow: auto;
 }
 
 .output-container__output {
-	position: absolute;
-	top: 0;
-	left: 0;
-
-	word-break: break-all;
+	word-break: break-word;
 }
 
 .output-container__overlay {
@@ -84,7 +139,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
 
 	text-align: center;
 }
@@ -98,6 +152,9 @@ footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
+	margin: 1.6rem 0 0.8rem 0;
+	font-size: 0.8rem;
 }
 
 @media (max-width: 900px) {
@@ -117,5 +174,15 @@ footer {
 
 	.main-ui {
 		flex: 0 1 80%;
+	}
+}
+
+@media (max-width: 767px) {
+	body {
+		font-size: 0.9rem;
+	}
+
+	.main-ui__buttons {
+		flex-direction: column;
 	}
 }

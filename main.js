@@ -1,14 +1,13 @@
+// Global DOM elements
 const encryptBtn = document.getElementById('encrypt-btn');
 const decryptBtn = document.getElementById('decrypt-btn');
 
-encryptBtn.addEventListener('click', () => {
-	handleCipherButtonClick('encrypt');
-});
+const textInputEl = document.getElementById('text-input');
+const textOutputEl = document.getElementById('text-output');
 
-decryptBtn.addEventListener('click', () => {
-	handleCipherButtonClick('decrypt');
-});
+const copyToClipboardBtn = document.getElementById('copy-to-clipboard-btn');
 
+// Cipher substitution mapping
 const cipher = {
 	'e': 'enter',
 	'i': 'imes',
@@ -17,14 +16,21 @@ const cipher = {
 	'u': 'ufat'
 }
 
-const textInputEl = document.getElementById('text-input');
+async function copyToClipboard() {
+	const output = textOutputEl.textContent;
+	try {
+		await navigator.clipboard.writeText(output);
+	} catch (error) {
+		console.error(error.message);
+	}
+}
 
 function handleCipherButtonClick(operation) {
 	if (!textInputEl.value) {
 		return ;
 	}
 
-	if (!hasOnlyLowerCase(textInputEl.value)) {
+	if (!hasOnlyLowerCaseAndSpace(textInputEl.value)) {
 		alert('Digite apenas letras minúsculas e sem acento');
 		return ;
 	}
@@ -94,7 +100,7 @@ function clearTextInput() {
 	textInputEl.value = '';
 }
 
-function hasOnlyLowerCase(textInput) {
+function hasOnlyLowerCaseAndSpace(textInput) {
 	for (let i = 0; i < textInput.length; ++i) {
 		if ((textInput.charCodeAt(i) < 97 ||
 			textInput.charCodeAt(i) > 122) &&
@@ -106,3 +112,16 @@ function hasOnlyLowerCase(textInput) {
 	}
 	return true;
 }
+
+// Event Listeners
+encryptBtn.addEventListener('click', () => {
+	handleCipherButtonClick('encrypt');
+});
+
+decryptBtn.addEventListener('click', () => {
+	handleCipherButtonClick('decrypt');
+});
+
+copyToClipboardBtn.addEventListener('click', () => {
+	copyToClipboard();
+});

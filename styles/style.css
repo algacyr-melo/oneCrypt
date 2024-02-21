@@ -143,6 +143,7 @@ h1 {
 	border: 1px solid #0A3871;
 
 	cursor: pointer;
+	display: none;
 }
 
 .output-container__output {

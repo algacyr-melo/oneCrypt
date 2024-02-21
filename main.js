@@ -45,6 +45,7 @@ function handleCipherButtonClick(operation) {
 	removeOutputOverlay();
 	updateTextOutput(textOutput);
 	clearTextInput();
+	copyToClipboardBtn.style.display = 'block';
 }
 
 function encrypt(text) {
